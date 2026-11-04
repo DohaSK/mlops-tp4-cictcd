@@ -1,9 +1,10 @@
 from src.data import load_params
 from src.train import train
 
+
 def test_model_quality_gate():
     params = load_params()
-    model, metrics = train()
+    _model, metrics = train()
     assert metrics["accuracy"] >= params["quality_gate"]["min_accuracy"]
     assert metrics["f1"] >= params["quality_gate"]["min_f1"]
 
